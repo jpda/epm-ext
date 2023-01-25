@@ -50,7 +50,8 @@ async function findAttachableItems() {
         if (elements.length === 0) {
             console.log(`no elements found for ${element.selector}, retrying in 5 seconds`);
             // hacky, but retry in 5 seconds if there are no elements - since no elements means it likely hasn't loaded yet
-            // or you have bad selectors - exponential backoff would be better
+            // todo: find an event to listen to 
+            // todo: exponential backoff would be better
             setTimeout(findAttachableItems, 5000);
             return;
         }
